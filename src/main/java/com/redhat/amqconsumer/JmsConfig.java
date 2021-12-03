@@ -27,7 +27,7 @@ public class JmsConfig {
     @Value("${broker.host}")
     private String brokerHost;
 
-    @Value("${broker.user}")
+    @Value("${broker.username}")
     private String brokerUser;
 
     @Value("${broker.password}")
@@ -39,7 +39,7 @@ public class JmsConfig {
     @Value("${trustStorePath}")
     private String trustStorePath;
 
-    @Value("${trustStorePass}")
+    @Value("${trustStorePassword}")
     private String trustStorePass;
 
     @Value("${verifyHostName}")
