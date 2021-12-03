@@ -33,8 +33,8 @@
             <artifactId>activemq-client</artifactId>
         </dependency>
         <dependency>
-            <groupId>org.apache.activemq</groupId>
-            <artifactId>activemq-pool</artifactId>
+            <groupId>org.messaginghub</groupId>
+            <artifactId>pooled-jms</artifactId>
         </dependency>
         <!--        Spring Boot     -->
         <dependency>
