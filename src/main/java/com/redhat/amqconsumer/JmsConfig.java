@@ -36,13 +36,13 @@ public class JmsConfig {
     @Value("${broker.maxConnections}")
     private String maxConnections;
 
-    @Value("${broker.trustStorePath}")
+    @Value("${trustStorePath}")
     private String trustStorePath;
 
-    @Value("${broker.trustStorePass}")
+    @Value("${trustStorePass}")
     private String trustStorePass;
 
-    @Value("${broker.verifyHostName}")
+    @Value("${verifyHostName}")
     private String verifyHostName;
 
     @Bean
