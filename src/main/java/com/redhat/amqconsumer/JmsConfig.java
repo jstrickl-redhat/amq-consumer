@@ -66,7 +66,17 @@ public class JmsConfig {
     }
 
     @Bean
-    public ActiveMQSslConnectionFactory cachingConnectionFactory(ActiveMQSslConnectionFactory connectionFactory) throws Exception {
+    public CachingConnectionFactory cachingConnectionFactory(ActiveMQSslConnectionFactory connectionFactory) {
+
+        CachingConnectionFactory factory = new CachingConnectionFactory();
+        factory.setTargetConnectionFactory(connectionFactory);
+        factory.afterPropertiesSet();
+
+        return factory;
+    }
+
+    @Bean
+    public ActiveMQSslConnectionFactory connectionFactory() throws Exception {
 
         ActiveMQSslConnectionFactory factory = new ActiveMQSslConnectionFactory();
         factory.setBrokerURL(remoteUri());
