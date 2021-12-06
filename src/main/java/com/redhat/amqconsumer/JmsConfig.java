@@ -41,7 +41,7 @@ public class JmsConfig {
     private String trustStorePath;
 
     @Value("${trustStorePassword}")
-    private String trustStorePass;
+    private String trustStorePassword;
 
     @Value("${verifyHostName}")
     private String verifyHostName;
@@ -82,7 +82,7 @@ public class JmsConfig {
         ActiveMQSslConnectionFactory factory = new ActiveMQSslConnectionFactory();
         factory.setBrokerURL(remoteUri());
         factory.setTrustStore(trustStorePath);
-        factory.setTrustStorePassword(trustStorePass);
+        factory.setTrustStorePassword(trustStorePassword);
         factory.setUserName(brokerUser);
         factory.setPassword(brokerPass);
 
