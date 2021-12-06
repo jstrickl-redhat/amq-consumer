@@ -1,4 +1,5 @@
-package com.redhat.amqconsumer;
+
+package com.redhat.amq.producer;
 
 
 import org.apache.activemq.ActiveMQSslConnectionFactory;
