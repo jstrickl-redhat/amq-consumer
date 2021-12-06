@@ -85,6 +85,7 @@ public class JmsConfig {
         factory.setTrustStorePassword(trustStorePassword);
         factory.setUserName(brokerUser);
         factory.setPassword(brokerPass);
+        factory.setAlwaysSessionAsync(true);
 
         return factory;
     }
