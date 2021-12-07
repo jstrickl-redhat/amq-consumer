@@ -57,21 +57,11 @@ public class JmsConfig {
     }
 
     @Bean
-    public DefaultJmsListenerContainerFactory jmsListenerContainerFactory(CachingConnectionFactory connectionFactory) {
+    public DefaultJmsListenerContainerFactory jmsListenerContainerFactory(ActiveMQSslConnectionFactory connectionFactory) {
 
         DefaultJmsListenerContainerFactory factory = new DefaultJmsListenerContainerFactory();
         factory.setConnectionFactory(connectionFactory);
         factory.setConcurrency("3-10");
-
-        return factory;
-    }
-
-    @Bean
-    public CachingConnectionFactory cachingConnectionFactory(ActiveMQSslConnectionFactory connectionFactory) {
-
-        CachingConnectionFactory factory = new CachingConnectionFactory();
-        factory.setTargetConnectionFactory(connectionFactory);
-        factory.afterPropertiesSet();
 
         return factory;
     }
@@ -85,8 +75,6 @@ public class JmsConfig {
         factory.setTrustStorePassword(trustStorePassword);
         factory.setUserName(brokerUser);
         factory.setPassword(brokerPass);
-        factory.setAlwaysSessionAsync(true);
-
         return factory;
     }
 
