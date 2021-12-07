@@ -47,7 +47,7 @@ public class JmsConfig {
     private String verifyHostName;
 
     @Bean
-    public JmsTemplate jmsTemplate(CachingConnectionFactory connectionFactory) {
+    public JmsTemplate jmsTemplate(ActiveMQSslConnectionFactory connectionFactory) {
 
         JmsTemplate jmsTemplate = new JmsTemplate();
         jmsTemplate.setConnectionFactory(connectionFactory);
@@ -65,6 +65,16 @@ public class JmsConfig {
 
         return factory;
     }
+
+//    @Bean
+//    public CachingConnectionFactory cachingConnectionFactory(ActiveMQSslConnectionFactory connectionFactory) {
+//
+//        CachingConnectionFactory factory = new CachingConnectionFactory();
+//        factory.setTargetConnectionFactory(connectionFactory);
+//        factory.afterPropertiesSet();
+//
+//        return factory;
+//    }
 
     @Bean
     public ActiveMQSslConnectionFactory connectionFactory() throws Exception {
